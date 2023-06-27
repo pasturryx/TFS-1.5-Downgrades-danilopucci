@@ -140,8 +140,11 @@ class Spell : public BaseSpell
 			spellId = id;
 		}
 
-		void postCastSpell(Player* player, bool finishedCast = true, bool payCost = true) const;
-		static void postCastSpell(Player* player, uint32_t manaCost, uint32_t soulCost);
+
+	SpellGroup_t getGroup() const { return group; }
+	void setGroup(SpellGroup_t g) { group = g; }
+	SpellGroup_t getSecondaryGroup() const { return secondaryGroup; }
+	void setSecondaryGroup(SpellGroup_t g) { secondaryGroup = g; }
 
 		uint32_t getManaCost(const Player* player) const;
 		uint32_t getSoulCost() const {
