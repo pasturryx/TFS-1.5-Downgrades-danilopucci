@@ -28,11 +28,14 @@ class Protocol;
 
 class ServiceBase
 {
-	public:
-		virtual bool is_single_socket() const = 0;
-		virtual bool is_checksummed() const = 0;
-		virtual uint8_t get_protocol_identifier() const = 0;
-		virtual const char* get_protocol_name() const = 0;
+
+public:
+	virtual ~ServiceBase() = default;
+
+	virtual bool is_single_socket() const = 0;
+	virtual bool is_checksummed() const = 0;
+	virtual uint8_t get_protocol_identifier() const = 0;
+	virtual const char* get_protocol_name() const = 0;
 
 		virtual Protocol_ptr make_protocol(const Connection_ptr& c) const = 0;
 };
