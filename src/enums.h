@@ -385,7 +385,6 @@ enum PlayerSex_t : uint8_t {
 	PLAYERSEX_LAST = PLAYERSEX_MALE
 };
 
-
 inline constexpr uint16_t VOCATION_NONE = 0;
 
 

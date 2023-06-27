@@ -140,7 +140,6 @@ class Spell : public BaseSpell
 			spellId = id;
 		}
 
-
 	SpellGroup_t getGroup() const { return group; }
 	void setGroup(SpellGroup_t g) { group = g; }
 	SpellGroup_t getSecondaryGroup() const { return secondaryGroup; }
