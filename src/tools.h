@@ -111,3 +111,4 @@ inline constexpr auto to_underlying(auto e) noexcept { return static_cast<std::u
 } // namespace tfs
 
 #endif // FS_TOOLS_H
+

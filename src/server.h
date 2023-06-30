@@ -37,6 +37,7 @@ public:
 	virtual uint8_t get_protocol_identifier() const = 0;
 	virtual const char* get_protocol_name() const = 0;
 
+
 		virtual Protocol_ptr make_protocol(const Connection_ptr& c) const = 0;
 };
 

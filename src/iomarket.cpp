@@ -72,6 +72,7 @@ MarketOfferList IOMarket::getOwnOffers(MarketAction_t action, uint32_t playerId)
 	DBResult_ptr result = Database::getInstance().storeQuery(fmt::format(
 	    "SELECT `id`, `amount`, `price`, `created`, `itemtype` FROM `market_offers` WHERE `player_id` = {:d} AND `sale` = {:d}",
 	    playerId, tfs::to_underlying(action)));
+
 	if (!result) {
 		return offerList;
 	}
@@ -294,6 +295,7 @@ bool IOMarket::moveOfferToHistory(uint32_t offerId, MarketOfferState_t state)
 
 void IOMarket::updateStatistics()
 {
+
 	DBResult_ptr result = Database::getInstance().storeQuery(fmt::format(
 	    "SELECT `sale` AS `sale`, `itemtype` AS `itemtype`, COUNT(`price`) AS `num`, MIN(`price`) AS `min`, MAX(`price`) AS `max`, SUM(`price`) AS `sum` FROM `market_history` WHERE `state` = {:d} GROUP BY `itemtype`, `sale`",
 	    tfs::to_underlying(OFFERSTATE_ACCEPTED)));
